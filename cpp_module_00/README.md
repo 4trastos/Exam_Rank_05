@@ -1,3 +1,5 @@
+#Subject
+```
 Assignment name  : cpp_module_00
 Expected files   : Warlock.cpp Warlock.hpp
 --------------------------------------------------------------------------------
@@ -79,3 +81,4 @@ Jack: I am Jack, the Mighty!$
 Jack: My job here is done!$
 Richard: My job here is done!$
 ~$
+```
