@@ -1,6 +1,6 @@
 ## Subject
 
-´´´
+```
 Assignment name  : cpp01_02
 Expected files   : Warlock.cpp Warlock.hpp
                    ASpell.hpp ASpell.cpp
@@ -96,4 +96,4 @@ Richard: I am Richard, the Titled!$
 Target Practice Dummy has been fwooshed!$
 Richard: My job here is done!$
 
-´´´
+```
