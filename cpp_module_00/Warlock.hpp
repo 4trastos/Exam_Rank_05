@@ -1,20 +1,41 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/21 15:19:08 by davgalle          #+#    #+#             */
+/*   Updated: 2024/10/21 15:47:39 by davgalle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-class Warlock {
+#ifndef WARLOCK_HPP
+# define WARLOCK_HPP
 
-	private :
-		Warlock & operator=(Warlock const & rhs);
-		Warlock(Warlock const & obj);
-		Warlock();
-		std::string _name;
-		std::string _title;
+# include <iostream>
+# include <iomanip>
+# include <string>
+
+class Warlock
+{
+	private:
+		std::string name;
+		std::string tittle;
 		
-	public :
-
-		Warlock(std::string name, std::string title);
+	public:
+		Warlock();
+		Warlock(const Warlock& copy);
+		Warlock& operator=(const Warlock& copy);
 		~Warlock();
-		std::string const & getName() const;
-		std::string const & getTitle() const;
-		void	setTitle(std::string const & str);
-		void	introduce() const;
+
+		Warlock(const std::string name, const std::string tittle);
+		const std::string& getName() const;
+		const std::string& getTitle() const;
+
+		void setTitle(const std::string& newTittle);
+
+		void introduce() const;
 };
+
+#endif
