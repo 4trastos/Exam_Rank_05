@@ -1,22 +1,43 @@
-#pragma once
-#include <iostream>
-#include "ATarget.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ASpell.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/23 14:08:54 by davgalle          #+#    #+#             */
+/*   Updated: 2024/10/23 15:14:35 by davgalle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ASPELL_HPP
+# define ASPELL_HPP
+
+# include "Warlock.hpp"
+# include "ATarget.hpp"
 
 class ATarget;
 
-class ASpell 
+class ASpell
 {
-	protected :
-		std::string _name;
-		std::string _effects;
+	protected:
+		std::string name;
+		std::string effects;
 	
-	public :
-		ASpell(std::string name, std::string effects);
-		ASpell & operator=(ASpell const & rhs);
-		ASpell(ASpell const & obj);
-		virtual ~ASpell();
-		std::string getName() const;
-		std::string getEffects() const;
+	public:
+		ASpell();
+		ASpell(const ASpell& copy);
+		ASpell& operator=(const ASpell& copy);
+		virtual~ASpell();
+
+		ASpell(const std::string name, const std::string effects);
+
+		const std::string getName() const;
+		const std::string getEffects() const;
+
 		virtual ASpell* clone() const = 0;
-		void launch(ATarget const & target) const;
+
+		void launch(const ATarget& target) const;
 };
+
+#endif

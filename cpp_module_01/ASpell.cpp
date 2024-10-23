@@ -1,38 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ASpell.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/23 14:09:03 by davgalle          #+#    #+#             */
+/*   Updated: 2024/10/23 15:10:25 by davgalle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ASpell.hpp"
 
-ASpell::ASpell(std::string name, std::string effects) : _name(name), _effects(effects)
-{
+ASpell::ASpell() {}
 
+ASpell::~ASpell() {}
+
+ASpell::ASpell(const std::string name, const std::string effects)
+{
+	this->name = name;
+	this->effects = effects;
 }
 
-ASpell & ASpell::operator=(ASpell const & rhs)
+ASpell::ASpell(const ASpell& copy)
 {
-	_name = rhs.getName();
-	_effects = rhs.getEffects();
-	return *this;
+	this->name = copy.name;
+	this->effects = copy.effects;
 }
 
-ASpell::ASpell(ASpell const & obj)
+ASpell& ASpell::operator=(const ASpell& copy)
 {
-	*this = obj;
+	if (this != &copy)
+	{
+		this->name = copy.name;
+		this->effects = copy.effects;
+	}
+	return (*this);
 }
 
-ASpell::~ASpell()
+const std::string ASpell::getName() const
 {
-
+	return (this->name);
 }
 
-std::string ASpell::getName() const
+const std::string ASpell::getEffects() const
 {
-	return (_name);
+	return (this->effects);
 }
 
-std::string ASpell::getEffects() const
+void ASpell::launch(const ATarget & target) const
 {
-	return (_effects);
-}
-
-void ASpell::launch(ATarget const & target) const
-{
-	target.getHitBySpell(*this);
+	target.getHitBySpell(*this);	
 }
