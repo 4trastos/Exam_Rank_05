@@ -1,49 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   SpellBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/23 16:52:05 by davgalle          #+#    #+#             */
+/*   Updated: 2024/10/23 17:31:41 by davgalle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "SpellBook.hpp"
 
-SpellBook::SpellBook(SpellBook const & src)
+SpellBook::SpellBook() {}
+
+SpellBook::~SpellBook() {}
+
+SpellBook::SpellBook(const SpellBook& copy)
 {
-	*this = src;
+	this->_Spellbook = copy._Spellbook;
 }
 
-SpellBook & SpellBook::operator=(SpellBook const & src)
+SpellBook& SpellBook::operator=(const SpellBook& copy)
 {
-	_SpellBook = src._SpellBook;
-	return (*this);
-}
-
-SpellBook::SpellBook()
-{}
-
-SpellBook::~SpellBook()
-{
-	for (std::map<std::string, ASpell*>::iterator it = _SpellBook.begin(); it != _SpellBook.end(); ++it) {
-		delete it->second;
+	if (this != &copy)
+	{
+		this->_Spellbook = copy._Spellbook;
 	}
-	_SpellBook.clear();
+	return (*this);
 }
 
 void SpellBook::learnSpell(ASpell* spell)
 {
 	if (spell)
-	{
-		_SpellBook[spell->getName()] = spell->clone();
-	}
+		_Spellbook[spell->getName()] = spell->clone();
 }
 
-void SpellBook::forgetSpell(std::string const & SpellName)
+void SpellBook::forgetSpell(const std::string& SpellName)
 {
-	std::map<std::string, ASpell*>::iterator it = _SpellBook.find(SpellName);
-	if (it != _SpellBook.end())
+	std::map<std::string, ASpell*>::iterator it = _Spellbook.find(SpellName);
+	if (it != _Spellbook.end())
 	{
 		delete it->second;
-		_SpellBook.erase(it);
+		_Spellbook.erase(it);
 	}
 }
 
-ASpell* SpellBook::createSpell(std::string const &SpellName)
+ASpell* SpellBook::createSpell(const std::string& SpellName)
 {
 	ASpell* tmp = NULL;
-	if (_SpellBook.find(SpellName) != _SpellBook.end())
-		tmp = _SpellBook[SpellName];
+	if (_Spellbook.find(SpellName) != _Spellbook.end())
+		tmp = _Spellbook[SpellName];
 	return (tmp);
 }
