@@ -90,17 +90,17 @@ Richard: My job here is done!$
 
 ## 🇪🇸 Español
 ```
-Nombre de la asignación: cpp_module_02
-Archivos esperados: Warlock.cpp Warlock.hpp
-ASpell.hpp ASpell.cpp
-ATarget.hpp ATarget.cpp
-Fwoosh.hpp Fwoosh.cpp
-Dummy.hpp Dummy.cpp
-Fireball.hpp Fireball.cpp
-Polymorph.hpp Polymorph.cpp
-BrickWall.hpp BrickWall.cpp
-SpellBook.hpp SpellBook.cpp
-TargetGenerator.hpp TargetGenerator.cpp
+Assignment name  : cpp_module_02
+Expected files   : Warlock.cpp Warlock.hpp
+                   ASpell.hpp ASpell.cpp
+				   ATarget.hpp ATarget.cpp
+				   Fwoosh.hpp Fwoosh.cpp
+				   Dummy.hpp Dummy.cpp
+				   Fireball.hpp Fireball.cpp
+				   Polymorph.hpp Polymorph.cpp
+				   BrickWall.hpp BrickWall.cpp
+				   SpellBook.hpp SpellBook.cpp
+				   TargetGenerator.hpp TargetGenerator.cpp
 --------------------------------------------------------------------------------
 
 En las clases Warlock, SpellBook y TargetGenerator, la declaración switch está
