@@ -1,4 +1,5 @@
 ## 🇬🇧 English
+```
 Assignment name  : cpp_module_02
 Expected files   : Warlock.cpp Warlock.hpp
                    ASpell.hpp ASpell.cpp
@@ -85,9 +86,10 @@ Inconspicuous Red-brick Wall has been turned into a critter!$
 Inconspicuous Red-brick Wall has been burnt to a crisp!$
 Richard: My job here is done!$
 ~$
+```
 
 ## 🇪🇸 Español
-
+```
 Nombre de la asignación: cpp_module_02
 Archivos esperados: Warlock.cpp Warlock.hpp
 ASpell.hpp ASpell.cpp
@@ -172,3 +174,4 @@ Inconspicuous Red-brick Wall has been turned into a critter!$
 Inconspicuous Red-brick Wall has been burnt to a crisp!$
 Richard: My job here is done!$
 ~$
+```
